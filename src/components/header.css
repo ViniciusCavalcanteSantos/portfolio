@@ -1,0 +1,66 @@
+.App-header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  background: rgba(43, 37, 60, 0.6);
+  box-shadow: 0 5px 20px 0.1px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(15px);
+  color: var(--white);
+}
+
+.App-header a {
+  color: var(--white);
+}
+
+.App-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.App-header .logo {
+  font-size: 1.5rem;
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 1px;
+  color: var(--text-white);
+}
+
+.App-header .logo i {
+  color: var(--color-1);
+  font-size: 1.75rem;
+}
+
+.App-header .links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.App-header .links a {
+  position: relative;
+  color: var(--text-gray);
+  transition: .3s;
+}
+
+.App-header .links a:hover {
+  color: var(--text-white);
+}
+
+.App-header .links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  height: 6px;
+  transform: translateX(-50%);
+  width: 0;
+  border-radius: 8px;
+  background-color: var(--white);
+  transition: .3s;
+}
+
+.App-header .links a:hover::after {
+  width: 110%;
+}

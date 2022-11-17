@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --color-1: #5EE084;
+  --color-1-dark: #327847;
+
+  --color-2: hsl(257, 100%, 60%);
+  --color-2-dark: hsl(257, 69%, 50%);
+
+  --text-gray: hsl(257, 14%, 51%);
+  --text-white: hsl(257, 100%, 95%);
+
+  --dark-0: hsl(255, 21%, 11%);
+  --dark-1: hsl(257, 19%, 15%);
+  --dark-2: hsl(257, 23%, 19%);
+  --dark-3: hsl(257, 23%, 24%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #231f2e;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.App main section {
+  padding: 120px 0;
+}
+
+.title {
+  color: var(--text-white);
+  font-family: "Abril Fatface", cursive;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.subtitle {
+  color: var(--text-white);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding: 2px 12px;
+  border-left: 3px solid var(--color-1);
+}
+
+.text {
+  color: var(--text-gray);
+  font-size: .9rem;
+  font-weight: 400;
+  margin: .8rem 0;
+}

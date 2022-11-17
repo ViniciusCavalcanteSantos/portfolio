@@ -1,0 +1,28 @@
+.introduction {
+}
+
+
+.introduction .container {
+  height: 100vh;
+  max-height: 600px;
+  display: grid;
+  grid-template-columns: 1.2fr minmax(350px, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+
+.introduction .info h1 {
+  font-size: 3.5rem;
+}
+
+.introduction .container .img-container img {
+  width: 100%;
+}
+
+.introduction .cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
