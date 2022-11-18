@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./header.css";
 
-export default function Header() {
+export default function Header({ activeLink }) {
   return (
     <header className="App-header">
       <div className="container">
@@ -13,16 +13,16 @@ export default function Header() {
 
         <ul className="links">
           <li>
-            <Link to="/#home">Home</Link>
+            <Link to="/#home" className={(activeLink === "home") ? "active" : ""}>Home</Link>
           </li>
           <li>
-            <Link to="/#sobre">Sobre</Link>
+            <Link to="/#sobre" className={(activeLink === "sobre") ? "active" : ""}>Sobre</Link>
           </li>
           <li>
-            <Link to="/#portifolio">Portifolio</Link>
+            <Link to="/#portifolio" className={(activeLink === "portifolio") ? "active" : ""}>Portifolio</Link>
           </li>
           <li>
-            <Link to="/#contato">Contato</Link>
+            <Link to="/#contato" className={(activeLink === "contato") ? "active" : ""}>Contato</Link>
           </li>
         </ul>
       </div>

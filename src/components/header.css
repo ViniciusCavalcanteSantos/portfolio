@@ -44,7 +44,8 @@
   transition: .3s;
 }
 
-.App-header .links a:hover {
+.App-header .links a:hover,
+.App-header .links a.active {
   color: var(--text-white);
 }
 
@@ -52,7 +53,7 @@
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -8px;
+  bottom: -10px;
   height: 6px;
   transform: translateX(-50%);
   width: 0;
@@ -61,6 +62,7 @@
   transition: .3s;
 }
 
-.App-header .links a:hover::after {
+.App-header .links a:hover::after,
+.App-header .links a.active::after {
   width: 110%;
 }
