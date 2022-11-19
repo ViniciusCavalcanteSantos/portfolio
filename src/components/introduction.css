@@ -1,7 +1,3 @@
-.introduction {
-}
-
-
 .introduction .container {
   height: 100vh;
   max-height: 600px;
@@ -14,6 +10,10 @@
 
 .introduction .info h1 {
   font-size: 3.5rem;
+}
+
+.introduction .info .text {
+  margin: 0.8rem 0;  
 }
 
 .introduction .container .img-container img {
