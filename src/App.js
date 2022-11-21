@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Header from "./components/header";
 import Introduction from "./components/introduction";
 import About from "./components/about";
+import Portifolio from "./components/portifolio";
 import './App.css';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       <main>
         <Introduction/>
         <About />
+        <Portifolio />
       </main>
     </div>
   );
