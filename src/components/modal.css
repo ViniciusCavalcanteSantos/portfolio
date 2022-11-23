@@ -1,0 +1,91 @@
+.modal {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.modal.open {
+  pointer-events: all;
+}
+
+.modal.open .modal-overlay {
+  opacity: 1;
+}
+
+.modal.open .modal-slide {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal .modal-overlay {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .85);
+  opacity: 0;
+  transition: .3s;
+}
+
+.modal .modal-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 400px));
+  width: 90%;
+  max-width: 900px;
+  padding: 0 100px;
+  z-index: 1001;
+  opacity: 0;
+  transition: .3s;
+}
+
+.modal li {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: none;
+  padding-top: 67%;
+  width: 100%;
+}
+
+.modal li.active {
+  display: block;
+}
+
+.modal li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  padding: 2rem;
+  color: var(--white);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-modal.prev {
+  left: 0;
+}
+
+.btn-modal.next {
+  right: 0;
+}

@@ -50,6 +50,7 @@
 }
 
 .portifolio-gallery figure {
+  position: relative;
   min-height: 0;
 }
 
@@ -66,4 +67,48 @@
   font-weight: 600;
   color: var(--text-white);
 
+}
+
+.portifolio-gallery .port-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: .5s;
+}
+
+.portifolio-gallery .port-overlay i {
+  font-size: 1rem;
+  background-color: var(--color-1);
+  color: hsl(257, 61%, 24%);
+  width: 40px;
+  line-height: 40px;
+  border-radius: 40%;
+  text-align: center;
+  transform: translateY(15px);
+  cursor: pointer;
+  transition: .3s;
+  opacity: 0;
+}
+
+.portifolio-gallery .port-overlay i:hover {
+  background-color: var(--color-1-dark);
+}
+
+.portifolio-gallery .port-overlay:hover {
+  background: rgba(43, 37, 60, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.portifolio-gallery .port-overlay:hover i {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: .3s var(--i);
 }

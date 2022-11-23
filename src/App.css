@@ -43,6 +43,10 @@ ul {
   list-style: none;
 }
 
+.stopScrolling {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1200px;
   height: 100%;
