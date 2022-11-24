@@ -12,7 +12,37 @@ import "./portifolio.css";
 
 export default function Portifolio() {
   const images = [port1, port2, port3, port4, port5, port6];
-  
+  const imagesInfo = [
+    {title: "Projeto responsivo de dashboard feito para a escola ETE", type: "projects"},
+    {title: "Página de equipe com informações vindas do banco de dados", type: "projects"},
+    {title: "Site de notícias produzido em 2021, com dashboard interativa", type: "projects"},
+    {title: "Equipe de Desenvolvimento Web ETEEM, da qual fiz parte em 2022", type: "people"},
+    {title: "Uma descrição padráo um descrição padráo", type: "people"},
+    {title: "Uma descrição padráo um descrição padráo", type: "projects"}
+  ];
+
+  const imagesElement = imagesInfo.map((imageInfo, i) => {
+    return (
+      <div className={"mix portifolio-item " + imageInfo.type} key={i}>
+        <figure>
+          <img src={images[i]} alt="" />
+
+          <div className="port-overlay">
+            <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(i)}></i>
+
+            <a href={images[i]} target="_blank">
+              <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
+            </a>
+          </div>
+        </figure>
+      
+        <h3 className="desc">
+          {imageInfo.title}
+        </h3>
+      </div>
+    )
+  })
+
   useEffect(() => {
     setTimeout(() => {
       mixitup(".portifolio-gallery", {
@@ -45,108 +75,7 @@ export default function Portifolio() {
         </div>
 
         <div className="portifolio-gallery" id="MixItUp56E572">
-          <div className="mix portifolio-item projects">
-            <figure>
-              <img src={port1} alt="" />
-
-              <div className="port-overlay">
-                <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(0)}></i>
-
-                <a href={port1} target="_blank">
-                  <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
-                </a>
-              </div>
-            </figure>
-          
-            <h3 className="desc">
-              Projeto responsivo de dashboard feito para a escola ETE
-            </h3>
-          </div>
-          <div className="mix portifolio-item projects">
-            <figure>
-              <img src={port2} alt="" />
-
-              <div className="port-overlay">
-                <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(1)}></i>
-
-                <a href={port1} target="_blank">
-                  <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
-                </a>
-              </div>
-            </figure>
-
-            <h3 className="desc">
-              Página de equipe com informações vindas do banco de dados
-            </h3>
-          </div>
-          <div className="mix portifolio-item projects">
-            <figure>
-              <img src={port3} alt="" />
-
-              <div className="port-overlay">
-                <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(2)}></i>
-
-                <a href={port3} target="_blank">
-                  <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
-                </a>
-              </div>
-            </figure>
-
-            <h3 className="desc">
-              Site de notícias produzido em 2021, com dashboard interativa
-            </h3>
-          </div>
-          <div className="mix portifolio-item people">
-            <figure>
-              <img src={port4} alt="" />
-
-              <div className="port-overlay">
-                <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(3)}></i>
-
-                <a href={port4} target="_blank">
-                  <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
-                </a>
-              </div>
-            </figure>
-
-            <h3 className="desc">
-              Equipe de Desenvolvimento Web ETEEM, da qual fiz parte em 2022
-            </h3>
-          </div>
-          <div className="mix portifolio-item people">
-            <figure>
-              <img src={port5} alt="" />
-
-              <div className="port-overlay">
-                <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(4)}></i>
-
-                <a href={port5} target="_blank">
-                  <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
-                </a>
-              </div>
-            </figure>
-
-            <h3 className="desc">
-              Um descrição padráo um descrição padráo
-            </h3>
-          </div>
-          <div className="mix portifolio-item projects">
-            <figure>
-              <img src={port6} alt="" />
-
-              <div className="port-overlay">
-                <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(5)}></i>
-
-                <a href={port6} target="_blank">
-                  <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
-                </a>
-              </div>
-            </figure>
-
-            <h3 className="desc">
-              Um descrição padráo um descrição padráo
-            </h3>
-          </div>
+          {imagesElement}
         </div>
       </div>
     </section>
