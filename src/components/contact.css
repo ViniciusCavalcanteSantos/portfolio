@@ -1,6 +1,7 @@
 .contact .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
   gap: 4rem;
 }
 
@@ -9,6 +10,7 @@
 }
 
 .form-contact {
+  max-width: 600px;
   padding: 3.5rem 3rem;
   border-radius: 20px;
   background-color: var(--dark-2);
@@ -105,4 +107,17 @@
 textarea.form-input {
   resize: none;
   min-height: 170px;
+}
+
+@media (max-width: 1024px) {
+  .contact .container {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+@media (max-width: 850px) {
+  .form-contact {
+    padding: 3.5rem 2rem;
+  }
 }

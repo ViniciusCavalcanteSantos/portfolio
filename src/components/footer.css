@@ -7,4 +7,19 @@ footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+}
+
+footer .container .text {
+  margin: 0 auto;
+}
+
+@media (max-width: 850px) {
+  footer .container .logo {
+    display: none;
+  }
+
+  footer .container .social-media {
+    display: none;
+  }
 }

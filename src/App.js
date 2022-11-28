@@ -52,7 +52,7 @@ function App() {
 function activeLinkHandler(setActiveLink) {
   const sections = document.querySelectorAll("section[id]");
   const passedSection = Array.from(sections).filter((section) => {
-    return section.getBoundingClientRect().top - 80 <= 0;
+    return section.getBoundingClientRect().top - 160 <= 0;
   }).at(-1);
 
   setActiveLink(passedSection.id);

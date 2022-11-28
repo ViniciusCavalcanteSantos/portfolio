@@ -27,6 +27,7 @@
 
 html, body {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -56,6 +57,12 @@ ul {
 
 .App main section {
   padding: 6rem 0;
+}
+
+@media (max-width: 850px) {
+  .App main section {
+    padding: 4rem 0;
+  }
 }
 
 .title {
