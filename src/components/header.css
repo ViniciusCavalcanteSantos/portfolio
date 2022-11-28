@@ -21,14 +21,14 @@
 
 }
 
-.App-header .logo {
+.logo {
   font-size: 1.5rem;
   font-family: "Abril Fatface", cursive;
   letter-spacing: 1px;
   color: var(--text-white);
 }
 
-.App-header .logo i {
+.logo i {
   color: var(--color-1);
   font-size: 1.75rem;
 }

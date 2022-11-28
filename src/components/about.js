@@ -20,7 +20,7 @@ export default function About() {
           <div className="box-heading">
             <h2 className="subtitle">Minhas Habilidades</h2>
             <h1 className="title">Deixe-me ajudá-lo</h1>
-            <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, qui officiis excepturi labore explicabo reprehenderit, possimus blanditiis nostrum ducimus inventore suscipit repudiandae id accusantium eligendi deserunt maxime. Quo, nisi magnam!</p>
+            <p className="text">Já trabalhei em diversos projetos e acúmulo experiência com diversas linguagens de programação, sou um desenvolvedor Full-Stack com especialização em PHP no back-end. Atualmente estou disponível para trabalho na área de desenvolvimento.</p>
           </div>
 
           <ul className="skills">
@@ -63,7 +63,7 @@ export default function About() {
                   <circle cx="75" cy="75" r="68"></circle>
                 </svg>
                 <h2 className="counter">
-                  <span data-target="77">0</span>%
+                  <span data-target="84">0</span>%
                 </h2>
               </div>
               <div className="skill-title">PHP</div>

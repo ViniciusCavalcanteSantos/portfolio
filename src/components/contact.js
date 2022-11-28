@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="box-heading">
           <h2 className="subtitle">Contate-me</h2>
           <h1 className="title">Vamos trabalhar juntos</h1>
-          <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, reprehenderit recusandae! Maiores nisi esse veniam architecto.</p>
+          <p className="text">Meu nome é Vinicius, eu programo há 5 anos e já trabalhei em diversos projetos pessoais e profissionais, contate-me.</p>
 
           <a href="mailto:viniciuscsantosoficial@gmail.com" className="mail">viniciuscsantosoficial@gmail.com <i className="fa-solid fa-arrow-right"></i></a>
 
@@ -23,7 +23,6 @@ export default function Contact() {
 
             <a href="" target="_blank">
               <i className="fa-brands fa-linkedin"></i>
-              {/* <i class="fa-brands fa-dribbble"></i> */}
             </a>
           </div>
         </div>

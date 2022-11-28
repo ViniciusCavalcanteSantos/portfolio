@@ -11,7 +11,7 @@ export default function Introduction() {
         <div className="info">
           <h2 className="subtitle">Desenvolvedor Web</h2>
           <h1 className="title">Olá!, meu nome é Vinicius</h1>
-          <p className="text">Este site foi feito com React. Eu sou um Desenvolvedor Web independente, vamos trabalhar juntos!</p>
+          <p className="text">Este site foi feito com React. Eu sou um Desenvolvedor Full-Stack independente, vamos trabalhar juntos!</p>
           <div className="cta">
             <Button to="#contato">
               Contate-me

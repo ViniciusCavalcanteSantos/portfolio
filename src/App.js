@@ -6,6 +6,7 @@ import Introduction from "./components/introduction";
 import About from "./components/about";
 import Portifolio from "./components/portifolio";
 import Contact from "./components/contact";
+import Footer from "./components/footer";
 import './App.css';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <About />
         <Portifolio />
         <Contact />
+        <Footer />
       </main>
     </div>
   );
