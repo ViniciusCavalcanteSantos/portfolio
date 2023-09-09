@@ -13,16 +13,12 @@ export default function Contact() {
           <a href="mailto:viniciuscsantosoficial@gmail.com" className="mail">viniciuscsantosoficial@gmail.com <i className="fa-solid fa-arrow-right"></i></a>
 
           <div className="social-media">
-            <a href="https://github.com/ViniciusCavalcanteSantos" target="_blank">
+            <a href="https://github.com/ViniciusCavalcanteSantos" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-github"></i>
             </a>
 
-            <a href="https://www.instagram.com/viniciuscsantosoficial" target="_blank">
+            <a href="https://www.instagram.com/viniciuscsantosoficial" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="" target="_blank">
-              <i className="fa-brands fa-linkedin"></i>
             </a>
           </div>
         </div>

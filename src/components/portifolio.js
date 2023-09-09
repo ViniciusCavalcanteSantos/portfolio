@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import mixitup from "mixitup";
 
 import Modal, { openModal } from "./modal";
@@ -30,7 +30,7 @@ export default function Portifolio() {
           <div className="port-overlay">
             <i className="fa-solid fa-magnifying-glass-plus" style={{"--i" : "0s"}} onClick={() => openModal(i)}></i>
 
-            <a href={images[i]} target="_blank">
+            <a href={images[i]} target="_blank" rel="noreferrer">
               <i className="fa-solid fa-file" style={{"--i" : ".15s"}}></i>
             </a>
           </div>
