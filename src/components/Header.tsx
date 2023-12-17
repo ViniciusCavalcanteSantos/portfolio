@@ -21,7 +21,7 @@ const TagHeader = styled.header`
   background: rgba(43, 37, 60, 0.6);
   box-shadow: 0 5px 20px 0.1px rgb(0 0 0 / 10%);
   backdrop-filter: blur(15px);
-  color: var(--white);
+  color: var(--text-white);
 
   &::after {
     content: "";
@@ -40,7 +40,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  padding: 0 20px;
   max-width: var(--max-width);
 `
 
@@ -74,7 +74,7 @@ const ListItem = styled.li`
   }
 
   &:hover {
-    color: #fff;
+    color: var(--text-white);
 
     &::after {
       width: 110%;

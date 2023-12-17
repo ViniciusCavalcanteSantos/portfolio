@@ -2,9 +2,15 @@
   --max-width: 1200px;
   --border-radius: 12px;
 
+
+  --primary: #238ce8;
+  --primary-dark: hsl(257, 69%, 50%);
+  --secondary: hsl(47, 100%, 61%);
+  --secondary-dark: hsl(47, 82%, 55%);
   --white: #fff;
   --black: #000;
 
+  --text-white: rgb(237, 229, 255);
   --text-gray: hsl(257, 14%, 51%);
 }
 

@@ -1,11 +1,11 @@
 "use client"
 
+import Introduction from "@/components/Introduction"
 import styled from "styled-components"
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
 `
@@ -13,7 +13,7 @@ const Main = styled.main`
 export default function Page() {
   return (
     <Main>
-      
+      <Introduction />
     </Main>
   )
 }
