@@ -1,5 +1,6 @@
 "use client"
 
+import Entrance from "@/components/Entrance"
 import SectionIntroduction from "@/components/SectionIntroduction"
 import SectionSkills from "@/components/SectionSkills"
 import styled from "styled-components"
@@ -19,6 +20,8 @@ export default function Page() {
     <Main>
       <SectionIntroduction />
       <SectionSkills />
+
+      <Entrance />
     </Main>
   )
 }
