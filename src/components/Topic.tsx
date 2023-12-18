@@ -3,7 +3,7 @@ import { Abril_Fatface } from "next/font/google";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 const TopicName = styled.span`
-  color: var(--text-white);
+  color: var(--text-primary);
   font-size: .85rem;
   font-weight: 400;
   letter-spacing: .5px;
@@ -14,14 +14,14 @@ const TopicName = styled.span`
 `
 
 const TopicTitle = styled.h2`
-  color: var(--text-white);
+  color: var(--text-primary);
   line-height: 1.3;
   font-size: 3rem;
   ${AbrilFatface.style}
 `
 
 const TopicDescription = styled.p`
-  color: var(--text-gray);
+  color: var(--text-secondary);
   font-size: .9rem;
   font-weight: 400;
   line-height: 2.3;

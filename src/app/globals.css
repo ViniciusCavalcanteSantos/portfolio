@@ -6,12 +6,35 @@
   --primary: #238ce8;
   --primary-dark: hsl(257, 69%, 50%);
   --secondary: hsl(47, 100%, 61%);
-  --secondary-dark: hsl(47, 82%, 55%);
+  --secondary: hsl(47, 82%, 55%);
   --white: #fff;
   --black: #000;
 
-  --text-white: rgb(237, 229, 255);
-  --text-gray: hsl(257, 14%, 51%);
+
+}
+
+body {
+  --bg-color: hsl(257, 100%, 97%);
+  --bg-color-1: hsl(257, 100%, 95.5%);
+  --bg-color-2: #fff;
+  --bg-color-3: hsl(257, 100%, 98%);
+  --bg-color-transparent: rgba(255, 255, 255, 0.6);
+
+
+  --text-primary: hsl(257, 61%, 24%);
+  --text-secondary: hsl(257, 17%, 63%);
+}
+
+body.dark {
+  --bg-color: hsl(257, 19%, 15%);
+  --bg-color-1: hsl(257, 21%, 11%);
+  --bg-color-2: hsl(257, 23%, 19%);
+  --bg-color-3: hsl(257, 23%, 24%);
+  --bg-color-transparent: hsla(257, 23%, 19%, 0.6);
+
+  
+  --text-primary: hsl(257, 100%, 95%);
+  --text-secondary: hsl(257, 14%, 51%);
 }
 
 * {
@@ -23,7 +46,7 @@
 html,
 body {
   max-width: 100vw;
-  background-color: #231f2e;
+  background-color: var(--bg-color);
   overflow-x: hidden;
 }
 

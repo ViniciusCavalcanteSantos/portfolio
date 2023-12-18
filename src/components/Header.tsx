@@ -18,10 +18,11 @@ const TagHeader = styled.header`
   width: 100%;
   height: 80px;
   top: 0;
-  background: rgba(43, 37, 60, 0.6);
+  /* background: rgba(43, 37, 60, 0.6); */
+  background-color: var(--bg-color-2);
   box-shadow: 0 5px 20px 0.1px rgb(0 0 0 / 10%);
   backdrop-filter: blur(15px);
-  color: var(--text-white);
+  color: var(--text-primary);
 
   &::after {
     content: "";
@@ -53,7 +54,7 @@ const List = styled.ul`
   display: flex;
   gap: 2rem;
   list-style: none;
-  color: var(--text-gray);
+  color: var(--text-secondary);
 `
 
 const ListItem = styled.li`
@@ -74,7 +75,7 @@ const ListItem = styled.li`
   }
 
   &:hover {
-    color: var(--text-white);
+    color: var(--text-primary);
 
     &::after {
       width: 110%;
