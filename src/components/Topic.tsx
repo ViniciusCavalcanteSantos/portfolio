@@ -36,7 +36,7 @@ interface TopicType {
 
 export default function Topic({topic, title, description}: TopicType) {
   return(
-    <>
+    <div>
       <TopicName>
         {topic}
       </TopicName>
@@ -50,6 +50,6 @@ export default function Topic({topic, title, description}: TopicType) {
           {description}
         </TopicDescription>
       }
-    </>
+    </div>
   )
 }
