@@ -36,7 +36,7 @@ const DevImage = styled(Image)`
   }
 `
 
-export default function Introduction() {
+export default function SectionIntroduction() {
   return(
     <Section>
       <Container>

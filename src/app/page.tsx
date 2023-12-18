@@ -1,6 +1,7 @@
 "use client"
 
-import Introduction from "@/components/Introduction"
+import SectionIntroduction from "@/components/SectionIntroduction"
+import SectionSkills from "@/components/SectionSkills"
 import styled from "styled-components"
 
 const Main = styled.main`
@@ -16,7 +17,8 @@ const Main = styled.main`
 export default function Page() {
   return (
     <Main>
-      <Introduction />
+      <SectionIntroduction />
+      <SectionSkills />
     </Main>
   )
 }
