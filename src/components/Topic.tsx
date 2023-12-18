@@ -3,6 +3,7 @@ import { Abril_Fatface } from "next/font/google";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 const TopicName = styled.span`
+  display: inline-block;
   color: var(--text-primary);
   font-size: .85rem;
   font-weight: 400;

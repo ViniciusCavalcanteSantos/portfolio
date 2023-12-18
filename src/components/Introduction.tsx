@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Topic from "./Topic";
 import Image from "next/image";
 import devPerson from "@/assets/dev-person.svg"
+import Link from "next/link";
+import BtnPrimary from "./BtnPrimary";
 
 const Section = styled.section`
   padding: 96px 0;
@@ -20,6 +22,13 @@ const Container = styled.div`
   }
 `
 
+const LinksContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 3.5rem;
+`
+
 const DevImage = styled(Image)`
   && {
     width: 100%;
@@ -31,7 +40,18 @@ export default function Introduction() {
   return(
     <Section>
       <Container>
-        <Topic topic="Desenvolvedor Full Stack" title="Olá!, meu nome é Vinicius!" description="Este site foi feito com React. Eu sou um Desenvolvedor Full-Stack independente, vamos trabalhar juntos!" />
+        <div>
+          <Topic topic="Desenvolvedor Full Stack" title="Olá!, meu nome é Vinicius!" description="Este site foi feito com React. Eu sou um Desenvolvedor Full-Stack independente, vamos trabalhar juntos!" />
+
+          <LinksContainer>
+            <Link href="/#contato">
+              <BtnPrimary>Contate-me</BtnPrimary>
+            </Link>
+            <Link href="/" download>
+              <BtnPrimary background="outlined">Baixar curriculo</BtnPrimary>
+            </Link>
+          </LinksContainer>
+        </div>
 
         <DevImage src={devPerson} alt="Ilustração de um desenvolvedor" width={300} height={261} />
       </Container>
