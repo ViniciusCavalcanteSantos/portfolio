@@ -6,6 +6,7 @@ import logo from "@/assets/logo.svg"
 
 import { Abril_Fatface } from "next/font/google";
 import Link from "next/link";
+import Logo from "./Logo";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 
@@ -89,7 +90,8 @@ export default function Header() {
       <TagHeader>
         <Container>
           <PageTitle>
-            <Image src={logo} alt="Logo" width={40}/>
+            <Logo color1="#238ce8" color2="#ffffff" width={40} />
+
             inicius C. Santos
           </PageTitle>
 
