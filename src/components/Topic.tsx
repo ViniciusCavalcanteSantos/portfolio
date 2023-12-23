@@ -32,7 +32,7 @@ const TopicDescription = styled.p`
 interface TopicType {
   topic: string,
   title: string,
-  description: string | null
+  description?: string
 }
 
 export default function Topic({topic, title, description}: TopicType) {

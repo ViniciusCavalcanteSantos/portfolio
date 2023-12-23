@@ -1,3 +1,4 @@
+import { useGlobalContext } from "@/hooks/useGlobalContext"
 import styled, { keyframes } from "styled-components"
 
 
@@ -105,13 +106,25 @@ const LogoContainer = styled.div<LogoContainerProps>`
 `
 
 interface LogoProps {
-  color1: string,
-  color2: string,
   width: number
+  color1?: string,
+  color2?: string,
   animated?: boolean
 }
 
-export default function Logo({color1, color2, width, animated = false}: LogoProps) {
+export default function Logo({width, color1 = "", color2 = "", animated = false}: LogoProps) {
+  const { theme } = useGlobalContext();
+  if(!color1) {
+    if(theme === "light") color1 = "#238ce8";
+    if(theme === "dark")  color1 = "#238ce8";
+  }
+
+  if(!color2) {
+    if(theme === "light") color2 = "#238ce8";
+    if(theme === "dark")  color2 = "#ffffff";
+  }
+
+
   return(
     <LogoContainer className={animated ? "animate" : ""} width={width}>
       <LogoPart1 color={color1} />

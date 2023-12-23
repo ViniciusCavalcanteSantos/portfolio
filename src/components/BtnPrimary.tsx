@@ -33,6 +33,10 @@ const TagButton = styled.button`
     background: transparent;
     min-width: revert;
 
+    body.light & {
+      color: var(--text-secondary);
+    }
+
     &::before {
       content: "";
       position: absolute;

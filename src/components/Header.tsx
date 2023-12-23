@@ -1,12 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import styled from "styled-components";
-import logo from "@/assets/logo.svg"
 
 import { Abril_Fatface } from "next/font/google";
 import Link from "next/link";
 import Logo from "./Logo";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useGlobalContext } from "@/hooks/useGlobalContext";
+import { useCookies } from "next-client-cookies";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 
@@ -75,6 +77,10 @@ const ListItem = styled.li`
     transition: .3s;
   }
 
+  body.light &::after {
+    background-color: var(--primary);
+  }
+
   &:hover {
     color: var(--text-primary);
 
@@ -85,12 +91,46 @@ const ListItem = styled.li`
   
 `
 
+const ToggleTheme = styled.button`
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg-color-2);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+
+  &:hover {
+    filter: brightness(97%);
+  }
+
+  svg {
+    position: absolute;
+  }
+`
+
 export default function Header() {
+    const { theme, setTheme } = useGlobalContext();
+    const cookies = useCookies();
+
+    const handleTheme = () => {
+      const newTheme = (theme === "light") ? "dark" : "light";
+      setTheme(newTheme)
+      cookies.set("theme", newTheme)
+    }
+
     return (
       <TagHeader>
         <Container>
           <PageTitle>
-            <Logo color1="#238ce8" color2="#ffffff" width={40} />
+            <Logo width={40} />
 
             inicius C. Santos
           </PageTitle>
@@ -112,6 +152,12 @@ export default function Header() {
             </List>
           </nav>
         </Container>
+
+        <ToggleTheme onClick={handleTheme}>
+          
+          {theme === "dark"  && <FontAwesomeIcon icon={faSun} />}
+          {theme === "light" && <FontAwesomeIcon icon={faMoon} />}
+        </ToggleTheme>
       </TagHeader>
     )
   }

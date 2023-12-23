@@ -2,7 +2,10 @@
 
 import Entrance from "@/components/Entrance"
 import SectionIntroduction from "@/components/SectionIntroduction"
+import SectionProjects from "@/components/SectionProjects"
 import SectionSkills from "@/components/SectionSkills"
+import { useGlobalContext } from "@/hooks/useGlobalContext"
+import { useEffect } from "react"
 import styled from "styled-components"
 
 const Main = styled.main`
@@ -16,10 +19,18 @@ const Main = styled.main`
 `
 
 export default function Page() {
+  const { theme } = useGlobalContext();
+  useEffect(() => {
+    document.body.classList.remove("light")
+    document.body.classList.remove("dark")
+    document.body.classList.add(theme)
+  }, [theme])
+
   return (
     <Main>
       <SectionIntroduction />
       <SectionSkills />
+      <SectionProjects />
 
       <Entrance />
     </Main>

@@ -29,7 +29,7 @@ const Overlay = styled.div`
 export default function Entrance() {
   return (
     <Overlay>
-      <Logo color1="#238ce8" color2="#ffffff" width={80} animated={true} />
+      <Logo width={80} animated={true} />
     </Overlay>
   )
 }
