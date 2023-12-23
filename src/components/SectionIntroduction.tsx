@@ -21,6 +21,13 @@ const Container = styled.div`
   h2 {
     font-size: 3.5rem;
   }
+
+  @media (max-width: 850px) {
+    & {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+  }
 `
 
 const LinksContainer = styled.div`
@@ -34,6 +41,12 @@ const DevImage = styled(Image)`
   && {
     width: 100%;
     height: auto;
+  }
+
+  @media (max-width: 850px) {
+    & {
+      display: none;
+    }
   }
 `
 

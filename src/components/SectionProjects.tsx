@@ -7,8 +7,6 @@ import port4 from "@/assets/portfolio/port4.jpg"
 import port5 from "@/assets/portfolio/port5.jpg"
 import port6 from "@/assets/portfolio/port6.jpg"
 import Image from "next/image"
-import { useEffect, useRef } from "react"
-import { useGlobalContext } from "@/hooks/useGlobalContext"
 import { useUpdateSection } from "@/hooks/useUpdateSection"
 
 const Section = styled.section`
@@ -47,7 +45,8 @@ const FilterButton = styled.button`
 
 const CardsList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
 `
 
@@ -56,6 +55,7 @@ const CardsItem = styled.li`
   border-radius: 16px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  max-width: 400px;
 `
 
 const Figure = styled.figure`

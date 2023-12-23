@@ -5,10 +5,11 @@ import styled from "styled-components";
 import { Abril_Fatface } from "next/font/google";
 import Link from "next/link";
 import Logo from "./Logo";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMoon, faSun, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGlobalContext } from "@/hooks/useGlobalContext";
 import { useCookies } from "next-client-cookies";
+import { useState } from "react";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 
@@ -21,11 +22,11 @@ const TagHeader = styled.header`
   width: 100%;
   height: 80px;
   top: 0;
-  /* background: rgba(43, 37, 60, 0.6); */
-  background-color: var(--bg-color-2);
+  background: var(--bg-color-transparent);
   box-shadow: 0 5px 20px 0.1px rgb(0 0 0 / 10%);
   backdrop-filter: blur(15px);
   color: var(--text-primary);
+  padding: 0 20px;
 
   &::after {
     content: "";
@@ -44,7 +45,6 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
   max-width: var(--max-width);
 `
 
@@ -53,11 +53,46 @@ const PageTitle = styled.h1`
   ${AbrilFatface.style}
 `
 
+const NavTag = styled.nav`
+  @media (max-width: 750px) {
+    & {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+`
+
 const List = styled.ul`
   display: flex;
+  align-items: center;
   gap: 2rem;
   list-style: none;
   color: var(--text-secondary);
+
+  @media (max-width: 750px) {
+    & {
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      position: relative;
+      top: 0;
+      transform: translateY(-100%);
+      text-align: center;
+      padding: 2rem 3rem 4rem;
+      border-radius: 0 0 2rem 2rem;
+      background: rgba(43, 37, 60, 1);
+      pointer-events: none;
+      transition: .3s;
+    }
+
+    &.active {
+      transform: translateY(0%);
+      pointer-events: auto;
+    }
+  }
 `
 
 const ListItem = styled.li`
@@ -92,9 +127,59 @@ const ListItem = styled.li`
   
 `
 
+const ToggleMenu = styled.button`
+  width: 21px;
+  height: 21px;
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 1.5rem;
+
+  & svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  & .open-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    transition: all .3s;
+  }
+
+  & .close-icon {
+    opacity: 0;
+    transform: scale(.5) rotate(-125deg);
+    transition: all .3s;
+  }
+
+  &.active .open-icon {
+    transform: scale(1) rotate(125deg);
+    opacity: 0;
+  }
+
+  &.active .close-icon {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+
+  @media (max-width: 750px) {
+    & {
+      display: flex;
+    }
+  }
+`
+
 const ToggleTheme = styled.button`
   color: var(--text-primary);
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   background-color: var(--bg-color-2);
   border-radius: 50%;
@@ -107,6 +192,7 @@ const ToggleTheme = styled.button`
   justify-content: center;
   align-items: center;
   transition: .3s;
+  margin-left: 1.5rem;
 
   &:hover {
     filter: brightness(97%);
@@ -118,6 +204,7 @@ const ToggleTheme = styled.button`
 `
 
 export default function Header() {
+    const [menuOpen, setMenuOpen] = useState(false);
     const { theme, setTheme, currentSection } = useGlobalContext();
     const cookies = useCookies();
 
@@ -136,26 +223,30 @@ export default function Header() {
             inicius C. Santos
           </PageTitle>
 
-          <nav>
-            <List>
-              <ListItem className={currentSection === "home" ? "active" : ""}>
+          <NavTag>
+            <List className={menuOpen ? "active" : ""}>
+              <ListItem className={currentSection === "home" ? "active" : ""} onClick={() => setMenuOpen(false)}>
                 <Link href="#home">Home</Link>
               </ListItem>
-              <ListItem className={currentSection === "sobre" ? "active" : ""}>
+              <ListItem className={currentSection === "sobre" ? "active" : ""} onClick={() => setMenuOpen(false)}>
                 <Link href="#sobre">Sobre</Link>
               </ListItem>
-              <ListItem className={currentSection === "portfolio" ? "active" : ""}>
+              <ListItem className={currentSection === "portfolio" ? "active" : ""} onClick={() => setMenuOpen(false)}>
                 <Link href="#portfolio">Portfolio</Link>
               </ListItem>
-              <ListItem className={currentSection === "contato" ? "active" : ""}>
+              <ListItem className={currentSection === "contato" ? "active" : ""} onClick={() => setMenuOpen(false)}>
                 <Link href="#contato">Contato</Link>
               </ListItem>
             </List>
-          </nav>
+          </NavTag>
         </Container>
 
+        <ToggleMenu className={menuOpen ? "active" : ""} onClick={() => setMenuOpen(!menuOpen)}>
+          <FontAwesomeIcon icon={faBars}  className="open-icon"/>
+          <FontAwesomeIcon icon={faXmark} className="close-icon"/>
+        </ToggleMenu>
+
         <ToggleTheme onClick={handleTheme}>
-          
           {theme === "dark"  && <FontAwesomeIcon icon={faSun} />}
           {theme === "light" && <FontAwesomeIcon icon={faMoon} />}
         </ToggleTheme>

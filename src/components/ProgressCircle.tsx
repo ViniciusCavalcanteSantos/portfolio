@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import styled from "styled-components"
 import { useIntersectionObserver } from "usehooks-ts"
 
 const Container = styled.div`
+  margin: 0 auto;
 `
 
 const CounterContainer = styled.div`
