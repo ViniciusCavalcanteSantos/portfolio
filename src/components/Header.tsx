@@ -81,6 +81,7 @@ const ListItem = styled.li`
     background-color: var(--primary);
   }
 
+  &.active,
   &:hover {
     color: var(--text-primary);
 
@@ -117,7 +118,7 @@ const ToggleTheme = styled.button`
 `
 
 export default function Header() {
-    const { theme, setTheme } = useGlobalContext();
+    const { theme, setTheme, currentSection } = useGlobalContext();
     const cookies = useCookies();
 
     const handleTheme = () => {
@@ -137,16 +138,16 @@ export default function Header() {
 
           <nav>
             <List>
-              <ListItem>
+              <ListItem className={currentSection === "home" ? "active" : ""}>
                 <Link href="#home">Home</Link>
               </ListItem>
-              <ListItem>
+              <ListItem className={currentSection === "sobre" ? "active" : ""}>
                 <Link href="#sobre">Sobre</Link>
               </ListItem>
-              <ListItem>
+              <ListItem className={currentSection === "portfolio" ? "active" : ""}>
                 <Link href="#portfolio">Portfolio</Link>
               </ListItem>
-              <ListItem>
+              <ListItem className={currentSection === "contato" ? "active" : ""}>
                 <Link href="#contato">Contato</Link>
               </ListItem>
             </List>

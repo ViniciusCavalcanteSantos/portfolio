@@ -4,6 +4,7 @@ import Image from "next/image";
 import devPerson from "@/assets/dev-person.svg"
 import Link from "next/link";
 import BtnPrimary from "./BtnPrimary";
+import { useUpdateSection } from "@/hooks/useUpdateSection";
 
 const Section = styled.section`
   padding: 96px 0;
@@ -37,8 +38,10 @@ const DevImage = styled(Image)`
 `
 
 export default function SectionIntroduction() {
+  const { sectionRef } = useUpdateSection("home");
+
   return(
-    <Section>
+    <Section id="home" ref={sectionRef}>
       <Container>
         <div>
           <Topic topic="Desenvolvedor Full Stack" title="Olá!, meu nome é Vinicius!" description="Este site foi feito com React. Eu sou um Desenvolvedor Full-Stack independente, vamos trabalhar juntos!" />

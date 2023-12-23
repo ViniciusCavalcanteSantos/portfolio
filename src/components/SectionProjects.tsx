@@ -7,6 +7,9 @@ import port4 from "@/assets/portfolio/port4.jpg"
 import port5 from "@/assets/portfolio/port5.jpg"
 import port6 from "@/assets/portfolio/port6.jpg"
 import Image from "next/image"
+import { useEffect, useRef } from "react"
+import { useGlobalContext } from "@/hooks/useGlobalContext"
+import { useUpdateSection } from "@/hooks/useUpdateSection"
 
 const Section = styled.section`
   padding: 96px 0;
@@ -88,9 +91,9 @@ export default function SectionProjects() {
     {image: port5, title: "Implementação de um design feito no figma ultilizando o Next JS", type: "people"},
   ];
 
-  const CardsItemsList = imagesInfo.map((imageInfo) => {
+  const CardsItemsList = imagesInfo.map((imageInfo, index) => {
     return(
-      <CardsItem>
+      <CardsItem key={index}>
         <Figure>
           <ImagePortfolio src={imageInfo.image} alt={imageInfo.title} width={300} />
         </Figure>
@@ -100,8 +103,9 @@ export default function SectionProjects() {
     )
   })
 
+  const { sectionRef } = useUpdateSection("portfolio");
   return(
-    <Section>
+    <Section id="portfolio" ref={sectionRef}>
       <Container>
         <Topic topic="Portifólio" title="Meus projetos" />
 
