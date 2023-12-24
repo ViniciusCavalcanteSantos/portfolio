@@ -8,6 +8,9 @@ import port5 from "@/assets/portfolio/port5.jpg"
 import port6 from "@/assets/portfolio/port6.jpg"
 import Image from "next/image"
 import { useUpdateSection } from "@/hooks/useUpdateSection"
+import { useEffect } from "react"
+
+const mixitupImport = () => require('mixitup');
 
 const Section = styled.section`
   padding: 6rem 0;
@@ -44,7 +47,7 @@ const FilterButton = styled.button`
   color: var(--text-primary);
   transition: color .3s;
 
-  &.active {
+  &.mixitup-control-active {
     color: var(--primary);
   }
 `
@@ -54,14 +57,24 @@ const CardsList = styled.ul`
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 400px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+
+    h3 {
+      height: auto;
+    }
+  }
 `
 
 const CardsItem = styled.li`
   background-color: var(--bg-color-2);
   border-radius: 16px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   max-width: 400px;
+  width: 100%;
 `
 
 const Figure = styled.figure`
@@ -77,6 +90,7 @@ const ImagePortfolio = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 16px 16px 0 0;
 `
 
 const CardsTitle = styled.h3`
@@ -89,17 +103,17 @@ const CardsTitle = styled.h3`
 
 export default function SectionProjects() {
   const imagesInfo = [
+    {image: port5, title: "Implementação de um design feito no figma ultilizando o Next JS", type: "projects"},
     {image: port1, title: "Projeto responsivo de dashboard feito para a escola ETE", type: "projects"},
     {image: port6, title: "Versão mobile da dashboard de controle ETE", type: "projects"},
-    {image: port2, title: "Página de equipe com informações vindas do banco de dados", type: "projects"},
-    {image: port3, title: "Site de notícias produzido em 2021, com dashboard interativa", type: "projects"},
+    {image: port2, title: "Projeto de rede social criada em 2023 com PHP e React JS", type: "projects"},
     {image: port4, title: "Equipe de Desenvolvimento da ETE em que fiz parte em 2022", type: "people"},
-    {image: port5, title: "Implementação de um design feito no figma ultilizando o Next JS", type: "people"},
+    {image: port3, title: "Site de notícias produzido em 2021, com dashboard interativa", type: "projects"},
   ];
 
   const CardsItemsList = imagesInfo.map((imageInfo, index) => {
     return(
-      <CardsItem key={index}>
+      <CardsItem key={index} className={"mix portifolio-item " + imageInfo.type}>
         <Figure>
           <ImagePortfolio src={imageInfo.image} alt={imageInfo.title} width={300} />
         </Figure>
@@ -109,6 +123,20 @@ export default function SectionProjects() {
     )
   })
 
+  useEffect(() => {
+      if (typeof window === 'undefined') return;
+      const mixitup = mixitupImport();
+      
+      mixitup(".portifolio-gallery", {
+        selectors: {
+          target: ".portifolio-item"
+        },
+        animation: {
+          duration: 500
+        }
+      });
+  }, []);
+
   const { sectionRef } = useUpdateSection("portfolio");
   return(
     <Section id="portfolio" ref={sectionRef}>
@@ -116,12 +144,12 @@ export default function SectionProjects() {
         <Topic topic="Portifólio" title="Meus projetos" />
 
         <FilterButtons>
-          <FilterButton className="active" data-filter="all">Tudo</FilterButton>
+          <FilterButton data-filter="all">Tudo</FilterButton>
           <FilterButton data-filter=".projects">Projetos</FilterButton>
           <FilterButton data-filter=".people">Pessoas</FilterButton>
         </FilterButtons>
 
-        <CardsList>
+        <CardsList className="portifolio-gallery">
           {CardsItemsList}
         </CardsList>
       </Container>

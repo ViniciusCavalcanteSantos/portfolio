@@ -1,5 +1,6 @@
 import { GlobalContextProvider } from "@/contexts/GlobalContext";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
+import { CookiesProvider } from "next-client-cookies/server";
 
 export default function Providers({
   children
@@ -7,10 +8,12 @@ export default function Providers({
   children: React.ReactNode
 }) {
   return (
-    <StyledComponentsRegistry>
-      <GlobalContextProvider>
-        {children}
-      </GlobalContextProvider>
-    </StyledComponentsRegistry>
+    <CookiesProvider>
+      <StyledComponentsRegistry>
+        <GlobalContextProvider>
+          {children}
+        </GlobalContextProvider>
+      </StyledComponentsRegistry>
+    </CookiesProvider>
   )
 }
