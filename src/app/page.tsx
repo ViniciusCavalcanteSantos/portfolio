@@ -2,6 +2,7 @@
 
 import Entrance from "@/components/Entrance"
 import SectionContact from "@/components/SectionContact"
+import SectionFooter from "@/components/SectionFooter"
 import SectionIntroduction from "@/components/SectionIntroduction"
 import SectionProjects from "@/components/SectionProjects"
 import SectionSkills from "@/components/SectionSkills"
@@ -33,6 +34,7 @@ export default function Page() {
       <SectionSkills />
       <SectionProjects />
       <SectionContact />
+      <SectionFooter />
 
       <Entrance />
     </Main>

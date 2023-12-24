@@ -47,7 +47,6 @@ const FormTitle = styled.h3`
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--text-primary);
-  margin-bottom: 1.6rem;
 `
 
 export default function SectionContact() {
