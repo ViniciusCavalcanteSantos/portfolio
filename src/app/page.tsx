@@ -1,6 +1,7 @@
 "use client"
 
 import Entrance from "@/components/Entrance"
+import SectionContact from "@/components/SectionContact"
 import SectionIntroduction from "@/components/SectionIntroduction"
 import SectionProjects from "@/components/SectionProjects"
 import SectionSkills from "@/components/SectionSkills"
@@ -31,6 +32,7 @@ export default function Page() {
       <SectionIntroduction />
       <SectionSkills />
       <SectionProjects />
+      <SectionContact />
 
       <Entrance />
     </Main>
