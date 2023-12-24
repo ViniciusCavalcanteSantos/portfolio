@@ -21,17 +21,31 @@ const PageTitle = styled.h1`
   color: var(--text-primary);
   font-size: 1.5rem;
   ${AbrilFatface.style}
+
+  @media (max-width: 850px) {
+    & {
+      display: none;
+    }
+  }
 `
 
 const Copyright = styled.p`
   color: var(--text-secondary);
   font-size: .9rem;
   font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
 `
 
 const IconsContainer = styled.div`
   display: flex;
   gap: 16px;
+
+  @media (max-width: 850px) {
+    & {
+      display: none;
+    }
+  }
 `
 
 export default function SectionFooter() {

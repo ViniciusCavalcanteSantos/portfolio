@@ -52,6 +52,12 @@ const PageTitle = styled.h1`
   font-size: 1.5rem;
   ${AbrilFatface.style}
   margin-right: auto;
+
+  @media (max-width: 400px) {
+    span {
+      display: none;
+    }
+  }
 `
 
 const NavTag = styled.nav`
@@ -62,19 +68,14 @@ const NavTag = styled.nav`
       left: 0;
       width: 100%;
       overflow: hidden;
+      pointer-events: none;
     }
-  }
-`
 
-const List = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  color: var(--text-secondary);
+    &.active {
+      pointer-events: auto;
+    }
 
-  @media (max-width: 750px) {
-    & {
+    & ul {
       height: 100%;
       width: 100%;
       flex-direction: column;
@@ -89,11 +90,19 @@ const List = styled.ul`
       transition: .3s;
     }
 
-    &.active {
+    &.active ul {
       transform: translateY(0%);
       pointer-events: auto;
     }
   }
+`
+
+const List = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  color: var(--text-secondary);
 `
 
 const ListItem = styled.li`
@@ -221,11 +230,11 @@ export default function Header() {
           <PageTitle>
             <Logo width={40} />
 
-            inicius C. Santos
+            <span>inicius C. Santos</span>
           </PageTitle>
 
-          <NavTag>
-            <List className={menuOpen ? "active" : ""}>
+          <NavTag className={menuOpen ? "active" : ""}>
+            <List>
               <ListItem className={currentSection === "home" ? "active" : ""} onClick={() => setMenuOpen(false)}>
                 <Link href="#home">Home</Link>
               </ListItem>

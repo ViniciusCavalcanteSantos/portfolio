@@ -7,7 +7,13 @@ import BtnPrimary from "./BtnPrimary";
 import { useUpdateSection } from "@/hooks/useUpdateSection";
 
 const Section = styled.section`
-  padding: 96px 0;
+  padding: 6rem 0;
+
+  @media (max-width: 850px) {
+    & {
+      padding: 4rem 0;
+    }
+  }
 `
 
 const Container = styled.div`

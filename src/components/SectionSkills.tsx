@@ -1,14 +1,17 @@
 import styled from "styled-components"
 import Topic from "./Topic"
 import Skills from "./Skills"
-import { useEffect, useRef } from "react"
-import { useIntersectionObserver } from "usehooks-ts"
-import { useGlobalContext } from "@/hooks/useGlobalContext"
 import { useUpdateSection } from "@/hooks/useUpdateSection"
 
 const Section = styled.section`
-  padding: 96px 0;
+  padding: 6rem 0;
   width: 100%;
+
+  @media (max-width: 850px) {
+    & {
+      padding: 4rem 0;
+    }
+  }
 `
 
 const Container = styled.div`
@@ -19,6 +22,12 @@ const Container = styled.div`
 
   p {
     margin: 2rem 0;
+  }
+
+  @media (max-width: 850px) {
+    & {
+      padding: 4rem 2.5rem;
+    }
   }
 `
 

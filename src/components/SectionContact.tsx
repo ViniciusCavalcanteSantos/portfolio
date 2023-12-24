@@ -9,7 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Section = styled.section`
-  padding: 96px 0;
+  padding: 6rem 0;
+
+  @media (max-width: 850px) {
+    & {
+      padding: 4rem 0;
+    }
+  }
 `
 
 const Container = styled.div`
@@ -24,6 +30,12 @@ const Container = styled.div`
 
   & > div > a {
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 924px) {
+    & {
+      grid-template-columns: 1fr;
+    }
   }
 `
 
