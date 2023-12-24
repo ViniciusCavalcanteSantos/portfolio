@@ -26,7 +26,6 @@ const TagHeader = styled.header`
   box-shadow: 0 5px 20px 0.1px rgb(0 0 0 / 10%);
   backdrop-filter: blur(15px);
   color: var(--text-primary);
-  padding: 0 20px;
 
   &::after {
     content: "";
@@ -43,7 +42,8 @@ const TagHeader = styled.header`
 const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding: 0 20px;
   align-items: center;
   max-width: var(--max-width);
 `
@@ -51,6 +51,7 @@ const Container = styled.div`
 const PageTitle = styled.h1`
   font-size: 1.5rem;
   ${AbrilFatface.style}
+  margin-right: auto;
 `
 
 const NavTag = styled.nav`
@@ -83,7 +84,7 @@ const List = styled.ul`
       text-align: center;
       padding: 2rem 3rem 4rem;
       border-radius: 0 0 2rem 2rem;
-      background: rgba(43, 37, 60, 1);
+      background: var(--bg-color-2);
       pointer-events: none;
       transition: .3s;
     }
@@ -239,17 +240,17 @@ export default function Header() {
               </ListItem>
             </List>
           </NavTag>
+
+          <ToggleMenu className={menuOpen ? "active" : ""} onClick={() => setMenuOpen(!menuOpen)}>
+            <FontAwesomeIcon icon={faBars}  className="open-icon"/>
+            <FontAwesomeIcon icon={faXmark} className="close-icon"/>
+          </ToggleMenu>
+
+          <ToggleTheme onClick={handleTheme}>
+            {theme === "dark"  && <FontAwesomeIcon icon={faSun} />}
+            {theme === "light" && <FontAwesomeIcon icon={faMoon} />}
+          </ToggleTheme>
         </Container>
-
-        <ToggleMenu className={menuOpen ? "active" : ""} onClick={() => setMenuOpen(!menuOpen)}>
-          <FontAwesomeIcon icon={faBars}  className="open-icon"/>
-          <FontAwesomeIcon icon={faXmark} className="close-icon"/>
-        </ToggleMenu>
-
-        <ToggleTheme onClick={handleTheme}>
-          {theme === "dark"  && <FontAwesomeIcon icon={faSun} />}
-          {theme === "light" && <FontAwesomeIcon icon={faMoon} />}
-        </ToggleTheme>
       </TagHeader>
     )
   }
