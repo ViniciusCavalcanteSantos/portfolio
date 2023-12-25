@@ -115,7 +115,7 @@ export default function SectionProjects() {
     return(
       <CardsItem key={index} className={"mix portifolio-item " + imageInfo.type}>
         <Figure>
-          <ImagePortfolio src={imageInfo.image} alt={imageInfo.title} width={300} />
+          <ImagePortfolio src={imageInfo.image} alt={imageInfo.title} width={500} />
         </Figure>
 
         <CardsTitle>{imageInfo.title}</CardsTitle>

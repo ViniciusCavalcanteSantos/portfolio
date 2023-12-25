@@ -7,7 +7,6 @@ function LogoPart1({ color }: {color: string}) {
     <svg
       className="logo-part-1"
       width="80"
-      height="auto"
       viewBox="0 0 607.000000 463.000000"
       preserveAspectRatio="xMidYMid meet"
     >
@@ -33,7 +32,6 @@ function LogoPart2({ color }: {color: string}) {
     <svg
       className="logo-part-2"
       width="80"
-      height="auto"
       viewBox="0 0 607.000000 463.000000"
       preserveAspectRatio="xMidYMid meet"
     >

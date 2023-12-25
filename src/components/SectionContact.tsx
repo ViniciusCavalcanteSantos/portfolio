@@ -32,7 +32,7 @@ const Container = styled.div`
     margin-bottom: 1rem;
   }
 
-  @media (max-width: 924px) {
+  @media (max-width: 1024px) {
     & {
       grid-template-columns: 1fr;
     }

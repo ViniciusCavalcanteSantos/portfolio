@@ -8,14 +8,16 @@ import { cookies } from 'next/headers'
 const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Portfolio",
-    default: "Portfolio"
-  },
-  description: 'Meu universo de código em destaque! Explore meu portfólio de programação - uma jornada digital que traduz ideias em linhas de código inovadoras.',
+  title: "Portfolio | Vinicius Cavalcanti Santos",
+  description: 'Meu universo de código em destaque! Explore meu portfólio de programação - uma jornada digital que traduz ideias em linhas de código.',
   icons: {
     icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png"
   },
+  manifest: '/site.webmanifest',
+  openGraph: {
+    
+  }
 }
 
 // FONTAWESOME
