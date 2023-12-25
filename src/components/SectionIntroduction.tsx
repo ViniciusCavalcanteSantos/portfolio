@@ -75,7 +75,7 @@ export default function SectionIntroduction() {
           </LinksContainer>
         </div>
 
-        <DevImage src={devPerson} alt="Ilustração de um desenvolvedor" width={300} height={261} />
+        <DevImage src={devPerson} alt="Ilustração de um desenvolvedor" width={300} height={261} priority/>
       </Container>
     </Section>
   )

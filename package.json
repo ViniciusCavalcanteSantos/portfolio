@@ -13,6 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "embla-carousel-react": "^8.0.0-rc17",
     "mixitup": "^3.3.1",
     "next": "14.0.4",
     "next-client-cookies": "^1.1.0",

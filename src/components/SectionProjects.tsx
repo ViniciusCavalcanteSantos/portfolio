@@ -8,7 +8,11 @@ import port5 from "@/assets/portfolio/port5.jpg"
 import port6 from "@/assets/portfolio/port6.jpg"
 import Image from "next/image"
 import { useUpdateSection } from "@/hooks/useUpdateSection"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFile, faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons"
+import Link from "next/link"
+import CardsModal from "./CardsModal"
 
 const mixitupImport = () => require('mixitup');
 
@@ -93,6 +97,52 @@ const ImagePortfolio = styled(Image)`
   border-radius: 16px 16px 0 0;
 `
 
+const IconContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: .5s;
+  border-radius: 16px 16px 0 0;
+
+  &:hover {
+    background: rgba(43, 37, 60, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    svg {
+      transform: translateY(0px);
+      opacity: 1;
+      transition: .3s var(--i);
+    }
+  }
+
+  svg {
+    font-size: 1rem;
+    background-color: var(--primary);
+    color: hsl(257, 61%, 24%);
+    padding: 12px;
+    border-radius: 40%;
+    text-align: center;
+    transform: translateY(15px);
+    cursor: pointer;
+    transition: .3s;
+    opacity: 0;
+
+    &:hover {
+      background-color: var(--primary-dark);
+    }
+  }
+`
+
 const CardsTitle = styled.h3`
   height: 82px;
   padding: 1rem 1.5rem;
@@ -102,6 +152,8 @@ const CardsTitle = styled.h3`
 `
 
 export default function SectionProjects() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [open, setOpen] = useState(false);
   const imagesInfo = [
     {image: port5, title: "Implementação de um design feito no figma ultilizando o Next JS", type: "projects"},
     {image: port1, title: "Projeto responsivo de dashboard feito para a escola ETE", type: "projects"},
@@ -111,11 +163,24 @@ export default function SectionProjects() {
     {image: port3, title: "Site de notícias produzido em 2021, com dashboard interativa", type: "projects"},
   ];
 
+  const handleClick = (index: number) => {
+    setCurrentSlide(index);
+    setOpen(true);
+  }
+
   const CardsItemsList = imagesInfo.map((imageInfo, index) => {
     return(
       <CardsItem key={index} className={"mix portifolio-item " + imageInfo.type}>
         <Figure>
           <ImagePortfolio src={imageInfo.image} alt={imageInfo.title} width={500} />
+
+          <IconContainer>
+            <FontAwesomeIcon icon={faMagnifyingGlassPlus}  style={{"--i": "0s"} as React.CSSProperties} onClick={() => handleClick(index)}/>
+
+            <Link href={imageInfo.image.src} target="_blank">
+              <FontAwesomeIcon icon={faFile} style={{"--i": ".15s"} as React.CSSProperties}/>
+            </Link>
+          </IconContainer>
         </Figure>
 
         <CardsTitle>{imageInfo.title}</CardsTitle>
@@ -152,6 +217,8 @@ export default function SectionProjects() {
         <CardsList className="portifolio-gallery">
           {CardsItemsList}
         </CardsList>
+
+        <CardsModal imagesInfo={imagesInfo} currentSlide={currentSlide} open={open} setOpen={setOpen} />
       </Container>
     </Section>
   )
