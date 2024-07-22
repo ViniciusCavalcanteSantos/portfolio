@@ -1,7 +1,7 @@
 import * as sgMail from "@sendgrid/mail"
 
 export async function POST(req: Request) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
   const formData = await req.formData();
   const name = formData.get('name')
   const email = formData.get('email')
@@ -18,6 +18,6 @@ export async function POST(req: Request) {
     await sgMail.send(msg);
     return Response.json({ status: true, message: "Email enviado com sucesso."})
   } catch (error) {
-    return Response.json({ status: false, message: "Não foi possível enviar o email."})
+    return Response.json({ status: false, message: "Não foi possível enviar o email ou ele já foi enviado."})
   }
 }

@@ -8,6 +8,7 @@ import LinkIcon from "./LinkIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FormEvent, useState } from "react";
+import { toast } from "react-toastify";
 
 const Section = styled.section`
   padding: 6rem 0;
@@ -71,7 +72,7 @@ export default function SectionContact() {
     fetch("/api/sendEmail", {method: "POST", body: formData})
       .then(res => res.json())
       .then(res => {
-        console.log(res.message)
+        toast(res.message)
       })
   }
 
