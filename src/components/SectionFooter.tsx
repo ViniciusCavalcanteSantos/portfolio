@@ -4,6 +4,7 @@ import { Abril_Fatface } from "next/font/google";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LinkIcon from "./LinkIcon";
+import { useEffect, useState } from "react";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 const Footer = styled.footer`
@@ -49,6 +50,16 @@ const IconsContainer = styled.div`
 `
 
 export default function SectionFooter() {
+  const [year, setYear] = useState((new Date()).getFullYear())
+
+  useEffect(() => {
+    fetch("/api/getYear", {method: "GET"})
+      .then(res => res.json())
+      .then(res => {
+        if(res.status) setYear(res.year)
+      })
+  }, [])
+
   return(
     <Footer>
       <Container>
@@ -58,7 +69,7 @@ export default function SectionFooter() {
           inicius C. Santos
         </PageTitle>
 
-        <Copyright>© Copyright 2024. Todos os direitos garantidos</Copyright>
+        <Copyright>©Copyright {year}. Todos os direitos garantidos</Copyright>
 
         <IconsContainer>
           <LinkIcon href="https://github.com/ViniciusCavalcanteSantos">
