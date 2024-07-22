@@ -68,7 +68,7 @@ export default function SectionContact() {
     <Section id="contato" ref={sectionRef}>
       <Container>
         <div>
-          <Topic topic="Contate-me" title="Vamos trabalhar juntos" description="Meu nome é Vinicius, eu programo há 5 anos e já trabalhei em diversos projetos pessoais e profissionais, contate-me." />
+          <Topic topic="Contate-me" title="Vamos trabalhar juntos" description="Eae pronto pra começar? é só me contatar enviando um email ou me ligando no número abaixo, também respondo por whatsapp, estou a espera!" />
 
           <LinkPrimary href="mailto:viniciuscsantosoficial@gmail.com">
             viniciuscsantosoficial@gmail.com 

@@ -37,7 +37,7 @@ export default function SectionSkills() {
   return(
     <Section id="sobre" ref={sectionRef}>
       <Container>
-        <Topic topic="Minhas Habilidades" title="Deixe-me ajudá-lo" description="Já trabalhei em diversos projetos e acúmulo experiência com diversas linguagens de programação, sou um desenvolvedor Full-Stack com especialização em PHP no back-end. Atualmente estou disponível para trabalho na área de desenvolvimento." />
+        <Topic topic="Minhas Habilidades" title="Deixe-me ajudá-lo" description="Trabalhei em diversos projetos escolares e freelancers e sou proficiente em várias linguagens de programação. Como desenvolvedor Full-Stack especializado em PHP para o back-end, estou atualmente disponível para novas oportunidades na área de desenvolvimento." />
 
         <Skills />
       </Container>

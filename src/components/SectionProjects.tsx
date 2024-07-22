@@ -170,7 +170,7 @@ export default function SectionProjects() {
 
   const CardsItemsList = imagesInfo.map((imageInfo, index) => {
     return(
-      <CardsItem key={index} className={"mix portifolio-item " + imageInfo.type}>
+      <CardsItem key={index} className={"mix portfolio-item " + imageInfo.type}>
         <Figure>
           <ImagePortfolio src={imageInfo.image} alt={imageInfo.title} width={500} />
 
@@ -192,9 +192,9 @@ export default function SectionProjects() {
       if (typeof window === 'undefined') return;
       const mixitup = mixitupImport();
       
-      mixitup(".portifolio-gallery", {
+      mixitup(".portfolio-gallery", {
         selectors: {
-          target: ".portifolio-item"
+          target: ".portfolio-item"
         },
         animation: {
           duration: 500
@@ -206,7 +206,7 @@ export default function SectionProjects() {
   return(
     <Section id="portfolio" ref={sectionRef}>
       <Container>
-        <Topic topic="Portifólio" title="Meus projetos" />
+        <Topic topic="Portfolio" title="Meus projetos" />
 
         <FilterButtons>
           <FilterButton data-filter="all">Tudo</FilterButton>
@@ -214,7 +214,7 @@ export default function SectionProjects() {
           <FilterButton data-filter=".people">Pessoas</FilterButton>
         </FilterButtons>
 
-        <CardsList className="portifolio-gallery">
+        <CardsList className="portfolio-gallery">
           {CardsItemsList}
         </CardsList>
 

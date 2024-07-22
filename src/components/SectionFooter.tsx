@@ -58,7 +58,7 @@ export default function SectionFooter() {
           inicius C. Santos
         </PageTitle>
 
-        <Copyright>© Copyright 2022. Todos os direitos garantidos</Copyright>
+        <Copyright>© Copyright 2024. Todos os direitos garantidos</Copyright>
 
         <IconsContainer>
           <LinkIcon href="https://github.com/ViniciusCavalcanteSantos">

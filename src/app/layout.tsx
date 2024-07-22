@@ -9,7 +9,7 @@ const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Portfolio | Vinicius Cavalcanti Santos",
-  description: 'Meu universo de código em destaque! Explore meu portfólio de programação - uma jornada digital que traduz ideias em linhas de código.',
+  description: 'Meu universo de código em destaque! Explore meu portfolio de programação - uma jornada digital que traduz ideias em linhas de código.',
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png"
