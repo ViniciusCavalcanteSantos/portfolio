@@ -7,6 +7,7 @@ import LinkPrimary from "./LinkPrimary";
 import LinkIcon from "./LinkIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FormEvent, useState } from "react";
 
 const Section = styled.section`
   padding: 6rem 0;
@@ -64,6 +65,16 @@ const FormTitle = styled.h3`
 export default function SectionContact() {
   const { sectionRef } = useUpdateSection("contato");
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    fetch("/api/sendEmail", {method: "POST", body: formData})
+      .then(res => res.json())
+      .then(res => {
+        console.log(res.message)
+      })
+  }
+
   return(
     <Section id="contato" ref={sectionRef}>
       <Container>
@@ -91,12 +102,12 @@ export default function SectionContact() {
           </IconsContainer>
         </div>
 
-        <FormContact>
+        <FormContact onSubmit={handleSubmit}>
           <FormTitle>Envie-me uma mensagem!</FormTitle>
 
-          <InputPrimary placeholder="Seu nome"/>
-          <InputPrimary placeholder="Seu email" type="email"/>
-          <TextareaPrimary placeholder="Detalhes do projeto" />
+          <InputPrimary name="name" placeholder="Seu nome" maxLength={40}/>
+          <InputPrimary name="email" placeholder="Seu email" type="email" maxLength={60}/>
+          <TextareaPrimary name="details" placeholder="Detalhes do projeto" maxLength={360}/>
 
           <BtnPrimary>
             Enviar
