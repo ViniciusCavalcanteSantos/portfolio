@@ -69,7 +69,7 @@ export default function SectionIntroduction() {
             <Link href="/#contato">
               <BtnPrimary>Contate-me</BtnPrimary>
             </Link>
-            <Link href="/" download>
+            <Link href="/curriculo.pdf" download>
               <BtnPrimary background="outlined">Baixar curriculo</BtnPrimary>
             </Link>
           </LinksContainer>
