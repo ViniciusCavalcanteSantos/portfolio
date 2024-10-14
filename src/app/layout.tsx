@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   openGraph: {
     url: urlClient,
     type: "website",
-    title: "Youniky | Uma rede social de criatividade",
-    description: 'Explore a essência da criatividade e conexões autênticas na Youniky. Compartilhe, inspire-se e seja você mesmo!',
-    siteName: "youniky",
+    title: "Portfolio | Vinicius Cavalcanti Santos",
+    description: 'Meu universo de código em destaque! Explore meu portfolio de programação - uma jornada digital que traduz ideias em linhas de código.',
+    siteName: "viniciuscsantos",
     images: backgroundImage.src
   },
   keywords: ["vinicius", "portfolio", "programação", "programador", "sucesso", "next", "javascript", "php",],
