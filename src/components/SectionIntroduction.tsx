@@ -63,7 +63,7 @@ export default function SectionIntroduction() {
     <Section id="home" ref={sectionRef}>
       <Container>
         <div>
-          <Topic topic="Desenvolvedor Full Stack" title="Olá!, meu nome é Vinicius!" description="Eu desenvolvi este site utilizando a tecnologia Next.js. Trabalho como desenvolvedor Full-Stack de forma independente e estou aberto a novas oportunidades. Que tal trabalharmos juntos?" />
+          <Topic topic="Desenvolvedor Full Stack" title="Olá!, meu nome é Vinicius!" description="Eu desenvolvi este site utilizando o framework Next.js. Sou um desenvolvedor Full-Stack e estou aberto a novas oportunidades. Que tal trabalharmos juntos?" />
 
           <LinksContainer>
             <Link href="/#contato">

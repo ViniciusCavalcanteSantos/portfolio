@@ -11,10 +11,10 @@ const SkillsProgressContainer = styled.div`
 export default function Skills() {
   return(
     <SkillsProgressContainer>
-      <ProgressCircle percentage={100} title="HTML"/>
-      <ProgressCircle percentage={89} title="CSS"/>
-      <ProgressCircle percentage={94} title="JS"/>
-      <ProgressCircle percentage={92} title="PHP"/>
+      <ProgressCircle percentage={93} title="NEXT JS"/>
+      <ProgressCircle percentage={89} title="TYPESCRIPT"/>
+      <ProgressCircle percentage={95} title="PHP"/>
+      <ProgressCircle percentage={90} title="SQL"/>
     </SkillsProgressContainer>
   )
 }
