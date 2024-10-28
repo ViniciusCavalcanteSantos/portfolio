@@ -1,23 +1,38 @@
-import * as sgMail from "@sendgrid/mail"
+import Mailjet  from "node-mailjet"
 
 export async function POST(req: Request) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
   const formData = await req.formData();
   const name = formData.get('name')
   const email = formData.get('email')
   const details = formData.get('details')
 
-  const msg = {
-    to: 'clashofclansazula@gmail.com',
-    from: 'viniciuscsantosoficial@gmail.com',
-    subject: `Meu portfolio: mensagem de ${name} seu email é ${email}`,
-    text: `${details}`,
-  };
+  const mailjet = new Mailjet({
+    apiKey: process.env.MJ_APIKEY_PUBLIC,
+    apiSecret: process.env.MJ_APIKEY_PRIVATE
+  })
+  
+  const request = await mailjet.post('send', { version: 'v3.1' }).request({
+    Messages: [
+      {
+        From: {
+          Email: 'clashofclansazula@gmail.com',
+          Name: 'Vinicius C. Santos',
+        },
+        To: [
+          {
+            Email: 'viniciuscsantosoficial@gmail.com',
+            Name: 'Vinicius C. Santos',
+          },
+        ],
+        Subject: `Meu Portfolio: mensagem de ${name} seu email é ${email}`,
+        TextPart: details,
+      },
+    ],
+  })
 
-  try {
-    await sgMail.send(msg);
+  if(request.response.status === 200) {
     return Response.json({ status: true, message: "Email enviado com sucesso."})
-  } catch (error) {
-    return Response.json({ status: false, message: "Não foi possível enviar o email ou ele já foi enviado."})
   }
+
+  return Response.json({ status: false, message: "Não foi possível enviar o email."})
 }
