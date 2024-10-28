@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 const Section = styled.section`
   padding: 6rem 0;
@@ -58,22 +60,32 @@ const FormContact = styled.form`
 `
 
 const FormTitle = styled.h3`
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: auto auto;
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--text-primary);
 `
 
 export default function SectionContact() {
+  const [loading, setLoading] = useState(false);
   const { sectionRef } = useUpdateSection("contato");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(loading) return;
+    setLoading(true);
+
     const formData = new FormData(e.target as HTMLFormElement);
-    fetch("/api/sendEmail", {method: "POST", body: formData})
+    await fetch("/api/sendEmail", {method: "POST", body: formData})
       .then(res => res.json())
       .then(res => {
         toast(res.message)
       })
+
+    setLoading(false);
   }
 
   return(
@@ -104,7 +116,7 @@ export default function SectionContact() {
         </div>
 
         <FormContact onSubmit={handleSubmit}>
-          <FormTitle>Envie-me uma mensagem!</FormTitle>
+          <FormTitle>Envie-me uma mensagem! {loading && <ClipLoader color="#238ce8" size={24}/>}</FormTitle>
 
           <InputPrimary name="name" placeholder="Seu nome" maxLength={40}/>
           <InputPrimary name="email" placeholder="Seu email" type="email" maxLength={60}/>
