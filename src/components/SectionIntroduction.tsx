@@ -5,6 +5,7 @@ import devPerson from "@/assets/dev-person.svg"
 import Link from "next/link";
 import BtnPrimary from "./BtnPrimary";
 import { useUpdateSection } from "@/hooks/useUpdateSection";
+import { useTranslations } from "next-intl";
 
 const Section = styled.section`
   padding: 6rem 0;
@@ -58,24 +59,25 @@ const DevImage = styled(Image)`
 
 export default function SectionIntroduction() {
   const { sectionRef } = useUpdateSection("home");
+  const t = useTranslations("home.introduction");
 
   return(
     <Section id="home" ref={sectionRef}>
       <Container>
         <div>
-          <Topic topic="Desenvolvedor Full Stack" title="Olá!, meu nome é Vinicius!" description="Eu desenvolvi este site utilizando o framework Next.js. Sou um desenvolvedor Full-Stack e estou aberto a novas oportunidades. Que tal trabalharmos juntos?" />
+          <Topic topic={t('topic')} title={t('title')} description={t('description')} />
 
           <LinksContainer>
             <Link href="/#contato">
-              <BtnPrimary>Contate-me</BtnPrimary>
+              <BtnPrimary>{t('contactme')}</BtnPrimary>
             </Link>
             <Link href="/curriculo.pdf" download>
-              <BtnPrimary background="outlined">Baixar curriculo</BtnPrimary>
+              <BtnPrimary background="outlined">{t('downloadcv')}</BtnPrimary>
             </Link>
           </LinksContainer>
         </div>
 
-        <DevImage src={devPerson} alt="Ilustração de um desenvolvedor" width={300} height={261} priority/>
+        <DevImage src={devPerson} alt={t('devIllustration')} width={300} height={261} priority/>
       </Container>
     </Section>
   )

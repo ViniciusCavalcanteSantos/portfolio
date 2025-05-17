@@ -1,6 +1,12 @@
 {
-  "HomePage": {
-    "title": "Olá mundo!",
-    "about": "Go to the about page"
+  "home": {
+    "introduction": {
+      "topic": "Desenvolvedor Full Stack",
+      "title": "Olá!, meu nome é Vinicius!",
+      "description": "Desenvolvi este site utilizando o framework Next.js. Sou um desenvolvedor Full-Stack apaixonado por criar aplicações web modernas. Vamos nos conectar e construir algo incrível juntos.",
+      "contactme": "Contate-me",
+      "downloadcv": "Baixar currículo",
+      "devIllustration": "Ilustração de um desenvolvedor"
+    }
   }
 }
