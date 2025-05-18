@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LinkIcon from "./LinkIcon";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import Loading from "@/app/[locale]/loading";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 const Footer = styled.footer`
@@ -66,7 +65,6 @@ export default function SectionFooter() {
   return(
     <Footer>
       <Container>
-        <Loading />
         <PageTitle>
           <Logo width={40} />
 
