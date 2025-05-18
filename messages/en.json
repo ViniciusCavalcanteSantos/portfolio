@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Portfolio | Vinicius Cavalcanti Santos",
+    "description": "My world of code in the spotlight! Explore my programming portfolio — a digital journey where ideas come to life through lines of code."
+  },
+  "messages": {
+    "loading": "Loading..."
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rightsReserved": "All rights reserved"
+  },
+  "home": {
+    "introduction": {
+      "topic": "Full Stack Developer",
+      "title": "Hi, I'm Vinicius!",
+      "description": "I developed this website using the Next.js framework. I'm a Full-Stack developer passionate about building modern web applications. Let’s connect and create something great together.",
+      "contactme": "Contact me",
+      "downloadcv": "Download CV",
+      "devIllustration": "Illustration of a developer"
+    },
+    "skills": {
+      "topic": "My Skills",
+      "title": "Let me help you",
+      "description": "I have worked on various academic and freelance projects, gaining solid experience in multiple programming languages. As a Full-Stack developer specialized in PHP for back-end development, I continuously strive to improve my skills and deliver efficient, well-structured solutions."
+    },
+    "projects": {
+      "topic": "Portfolio",
+      "title": "My projects",
+      "all": "All",
+      "projects": "Projects",
+      "people": "People",
+      "port1": "Responsive dashboard project developed for the ETE school.",
+      "port2": "Social network project created in 2023 using PHP and Next JS.",
+      "port3": "News website developed in 2021, featuring an interactive dashboard.",
+      "port4": "Part of the ETE development team in 2022.",
+      "port5": "Implemented a design created in Figma using Next.js.",
+      "port6": "Mobile version of the ETE control dashboard."
+    },
+    "contact": {
+      "topic": "My Skills",
+      "title": "Let me help you",
+      "description": "I have worked on various academic and freelance projects, gaining solid experience in multiple programming languages. As a Full-Stack developer specialized in PHP for back-end development, I continuously strive to improve my skills and deliver efficient, well-structured solutions.",
+      "sendMessage": "Send me a message!",
+      "youName": "Your name",
+      "youEmail": "Your email",
+      "youProjectDetail": "Project details",
+      "send": "Send"
+    }
+  }
+}

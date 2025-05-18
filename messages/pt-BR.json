@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Portfólio | Vinicius Cavalcanti Santos",
+    "description": "Meu universo de código em destaque! Explore meu portfolio de programação - uma jornada digital que traduz ideias em linhas de código."
+  },
+  "messages": {
+    "loading": "Carregando..."
+  },
+  "header": {
+    "home": "Home",
+    "about": "Sobre",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "footer": {
+    "rightsReserved": "Todos os direitos garantidos"
+  },
+  "home": {
+    "introduction": {
+      "topic": "Desenvolvedor Full Stack",
+      "title": "Olá!, meu nome é Vinicius!",
+      "description": "Desenvolvi este site utilizando o framework Next.js. Sou um desenvolvedor Full-Stack apaixonado por criar aplicações web modernas. Vamos nos conectar e construir algo incrível juntos.",
+      "contactme": "Contate-me",
+      "downloadcv": "Baixar currículo",
+      "devIllustration": "Ilustração de um desenvolvedor"
+    },
+    "skills": {
+      "topic": "Minhas Habilidades",
+      "title": "Deixe-me ajudá-lo",
+      "description": "Atuei em diversos projetos acadêmicos e como freelancer, adquirindo experiência sólida em várias linguagens de programação. Como desenvolvedor Full-Stack com especialização em PHP no back-end, busco constantemente aprimorar minhas habilidades e entregar soluções eficientes e bem estruturadas."
+    },
+    "projects": {
+      "topic": "Portfólio",
+      "title": "Meus projetos",
+      "all": "Tudo",
+      "projects": "Projetos",
+      "people": "Pessoas",
+      "port1": "Projeto responsivo de dashboard feito para a escola ETE",
+      "port2": "Projeto de rede social criada em 2023 com PHP e React JS",
+      "port3": "Site de notícias produzido em 2021, com dashboard interativa",
+      "port4": "Equipe de Desenvolvimento da ETE em que fiz parte em 2022",
+      "port5": "Implementação de um design feito no figma ultilizando o Next JS",
+      "port6": "Versão mobile da dashboard de controle ETE"
+    },
+    "contact": {
+      "topic": "Contate-me",
+      "title": "Vamos trabalhar juntos",
+      "description": "Eae pronto pra começar? é só me contatar enviando um email ou me ligando no número abaixo, também respondo por whatsapp, estou a espera!",
+      "sendMessage": "Envie-me uma mensagem!",
+      "youName": "Seu nome",
+      "youEmail": "Seu email",
+      "youProjectDetail": "Detalhes do projeto",
+      "send": "Enviar"
+    }
+  }
+}

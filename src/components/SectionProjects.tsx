@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFile, faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons"
 import Link from "next/link"
 import CardsModal from "./CardsModal"
+import { useTranslations } from "next-intl"
 
 const mixitupImport = () => require('mixitup');
 
@@ -152,15 +153,16 @@ const CardsTitle = styled.h3`
 `
 
 export default function SectionProjects() {
+  const t = useTranslations("home.projects");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [open, setOpen] = useState(false);
   const imagesInfo = [
-    {image: port5, title: "Implementação de um design feito no figma ultilizando o Next JS", type: "projects"},
-    {image: port1, title: "Projeto responsivo de dashboard feito para a escola ETE", type: "projects"},
-    {image: port6, title: "Versão mobile da dashboard de controle ETE", type: "projects"},
-    {image: port2, title: "Projeto de rede social criada em 2023 com PHP e React JS", type: "projects"},
-    {image: port4, title: "Equipe de Desenvolvimento da ETE em que fiz parte em 2022", type: "people"},
-    {image: port3, title: "Site de notícias produzido em 2021, com dashboard interativa", type: "projects"},
+    {image: port5, title: t('port5'), type: "projects"},
+    {image: port1, title: t('port1'), type: "projects"},
+    {image: port6, title: t('port6'), type: "projects"},
+    {image: port2, title: t('port2'), type: "projects"},
+    {image: port4, title: t('port4'), type: "people"},
+    {image: port3, title: t('port3'), type: "projects"},
   ];
 
   const handleClick = (index: number) => {
@@ -206,12 +208,12 @@ export default function SectionProjects() {
   return(
     <Section id="portfolio" ref={sectionRef}>
       <Container>
-        <Topic topic="Portfolio" title="Meus projetos" />
+        <Topic topic={t('topic')} title={t('title')} />
 
         <FilterButtons>
-          <FilterButton data-filter="all">Tudo</FilterButton>
-          <FilterButton data-filter=".projects">Projetos</FilterButton>
-          <FilterButton data-filter=".people">Pessoas</FilterButton>
+          <FilterButton data-filter="all">{t('all')}</FilterButton>
+          <FilterButton data-filter=".projects">{t('projects')}</FilterButton>
+          <FilterButton data-filter=".people">{t('people')}</FilterButton>
         </FilterButtons>
 
         <CardsList className="portfolio-gallery">

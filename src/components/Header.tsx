@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGlobalContext } from "@/hooks/useGlobalContext";
 import { useCookies } from "next-client-cookies";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 const AbrilFatface = Abril_Fatface({ weight: ["400"], subsets: ['latin'] });
 
 
@@ -214,6 +215,7 @@ const ToggleTheme = styled.button`
 `
 
 export default function Header() {
+    const t = useTranslations("header");
     const [menuOpen, setMenuOpen] = useState(false);
     const { theme, setTheme, currentSection } = useGlobalContext();
     const cookies = useCookies();
@@ -236,16 +238,16 @@ export default function Header() {
           <NavTag className={menuOpen ? "active" : ""}>
             <List>
               <ListItem className={currentSection === "home" ? "active" : ""} onClick={() => setMenuOpen(false)}>
-                <Link href="#home">Home</Link>
+                <Link href="#home">{t('home')}</Link>
               </ListItem>
               <ListItem className={currentSection === "sobre" ? "active" : ""} onClick={() => setMenuOpen(false)}>
-                <Link href="#sobre">Sobre</Link>
+                <Link href="#sobre">{t('about')}</Link>
               </ListItem>
               <ListItem className={currentSection === "portfolio" ? "active" : ""} onClick={() => setMenuOpen(false)}>
-                <Link href="#portfolio">Portfolio</Link>
+                <Link href="#portfolio">{t('portfolio')}</Link>
               </ListItem>
               <ListItem className={currentSection === "contato" ? "active" : ""} onClick={() => setMenuOpen(false)}>
-                <Link href="#contato">Contato</Link>
+                <Link href="#contato">{t('contact')}</Link>
               </ListItem>
             </List>
           </NavTag>
