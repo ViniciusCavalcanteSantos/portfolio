@@ -12,7 +12,7 @@ export default function Skills() {
   return(
     <SkillsProgressContainer>
       <ProgressCircle percentage={93} title="NEXT JS"/>
-      <ProgressCircle percentage={89} title="TYPESCRIPT"/>
+      <ProgressCircle percentage={98} title="TYPESCRIPT"/>
       <ProgressCircle percentage={95} title="PHP"/>
       <ProgressCircle percentage={90} title="SQL"/>
     </SkillsProgressContainer>

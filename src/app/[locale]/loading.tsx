@@ -1,7 +1,11 @@
+import { useTranslations } from "next-intl";
+
 export default function Loading() {
-    return (
-      <h2>
-        Carregando...
-      </h2>
-    )
-  }
+  const t = useTranslations('messages');
+
+  return (
+    <h2>
+      {t('loading')}
+    </h2>
+  )
+}

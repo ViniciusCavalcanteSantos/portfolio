@@ -10,6 +10,7 @@ import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 import ClipLoader from "react-spinners/ClipLoader";
+import { useTranslations } from "next-intl";
 
 
 const Section = styled.section`
@@ -70,6 +71,7 @@ const FormTitle = styled.h3`
 `
 
 export default function SectionContact() {
+  const t = useTranslations("home.contact");
   const [loading, setLoading] = useState(false);
   const { sectionRef } = useUpdateSection("contato");
 
@@ -92,7 +94,7 @@ export default function SectionContact() {
     <Section id="contato" ref={sectionRef}>
       <Container>
         <div>
-          <Topic topic="Contate-me" title="Vamos trabalhar juntos" description="Eae pronto pra começar? é só me contatar enviando um email ou me ligando no número abaixo, também respondo por whatsapp, estou a espera!" />
+          <Topic topic={t('topic')} title={t('title')} description={t('description')} />
 
           <LinkPrimary href="mailto:viniciuscsantosoficial@gmail.com">
             viniciuscsantosoficial@gmail.com 
@@ -116,14 +118,14 @@ export default function SectionContact() {
         </div>
 
         <FormContact onSubmit={handleSubmit}>
-          <FormTitle>Envie-me uma mensagem! {loading && <ClipLoader color="#238ce8" size={24}/>}</FormTitle>
+          <FormTitle>{t('sendMessage')} {loading && <ClipLoader color="#238ce8" size={24}/>}</FormTitle>
 
-          <InputPrimary name="name" placeholder="Seu nome" maxLength={40}/>
-          <InputPrimary name="email" placeholder="Seu email" type="email" maxLength={60}/>
-          <TextareaPrimary name="details" placeholder="Detalhes do projeto" maxLength={360}/>
+          <InputPrimary name="name"  placeholder={t('youName')} maxLength={40}/>
+          <InputPrimary name="email" placeholder={t('youEmail')} type="email" maxLength={60}/>
+          <TextareaPrimary name="details" placeholder={t('youProjectDetail')} maxLength={360}/>
 
           <BtnPrimary>
-            Enviar
+            {t('send')}
           </BtnPrimary>
         </FormContact>
       </Container>
