@@ -6,6 +6,10 @@
   "messages": {
     "loading": "Loading..."
   },
+  "api": {
+    "emailSuccess": "Email sent successfully!",
+    "emailError": "Something wen wrong, try again later."
+  },
   "header": {
     "home": "Home",
     "about": "About",

@@ -6,6 +6,10 @@
   "messages": {
     "loading": "Carregando..."
   },
+  "api": {
+    "emailSuccess": "Email enviado com sucesso!",
+    "emailError": "Não foi possível enviar o email."
+  },
   "header": {
     "home": "Home",
     "about": "Sobre",

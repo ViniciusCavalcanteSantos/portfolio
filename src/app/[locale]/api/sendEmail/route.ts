@@ -1,6 +1,8 @@
+import { getTranslations } from "next-intl/server";
 import Mailjet  from "node-mailjet"
 
 export async function POST(req: Request) {
+  const t = await getTranslations("api");
   const formData = await req.formData();
   const name = formData.get('name')
   const email = formData.get('email')
@@ -31,8 +33,8 @@ export async function POST(req: Request) {
   })
 
   if(request.response.status === 200) {
-    return Response.json({ status: true, message: "Email enviado com sucesso."})
+    return Response.json({ status: true, message: t('emailSuccess')})
   }
 
-  return Response.json({ status: false, message: "Não foi possível enviar o email."})
+  return Response.json({ status: false, message: t('emailError')})
 }
